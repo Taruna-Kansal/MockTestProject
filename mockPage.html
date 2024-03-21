@@ -1,10 +1,8 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mock Paper</title>
-<!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
 <body>
     <style>
@@ -52,23 +50,8 @@
         }
       }
     </style>      
-<!-- <div class="header">
-  <h1>Mock Paper: <span id="selectedExam">Name of the exam</span></h1>
-  <p>Instructions for attempting the mock paper go here.</p>
-</div>
-
-<div class="container">
-  <div class="questions">
-    <h2>Questions</h2>
-    Your questions go here -->
-  <!-- </div>
-  <div class="answers">
-    <h2>Answers</h2>
-    Your answers go here -->
-  <!-- </div>
-</div> -->
 <div class="header">
-  <h1>Mock Paper: <span id="selectedExam">Name of the exam</span></h1>
+  <h1>Mock Paper: <span id="selectedExam"></span></h1>
 </div>
 <div class = "Instructions" >
   <p>Instructions for attempting the mock paper:</p>
@@ -96,6 +79,15 @@
     <!-- Add more input boxes for more questions -->
   </div>
 </div>
+<script>
+  function updateExamName() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const selectedExam = urlParams.get('exam');
+    document.getElementById('selectedExam').textContent = selectedExam;
+  }
 
+  updateExamName();
+</script>
 </body>
 </html>

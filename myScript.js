@@ -44,7 +44,7 @@ const examOptions = {
     'Canada': ['MCCEE', 'LMCC']
   }
 };
-// Variable to store the selected course name
+//Variable to store the selected course name
 let selectedCourseName = '';
 
 // Get the modal
@@ -123,3 +123,23 @@ document.getElementById('country').addEventListener('change', function() {
   const selectedCountry = this.value;
   populateExams(selectedCourseName, selectedCountry);
 });
+function submitForm() {
+  // Prevent default form submission
+  event.preventDefault();
+
+  // Get the selected country and exam values
+  const selectedCountry = document.getElementById('country').value;
+  const selectedExam = document.getElementById('exam').value;
+
+  // Logic to handle form submission data (e.g., send to server, redirect to mockPage.html)
+  console.log("Selected Country:", selectedCountry);
+  console.log("Selected Exam:", selectedExam);
+
+  // Open mockPage.html with potentially selectedExam as a query parameter
+  window.location.href = "mockPage.html?exam=" + selectedExam;
+
+  // You can also close the modal here if needed
+  modal.style.display = "none";
+
+  return false; // Important to return false to prevent default form submission
+}

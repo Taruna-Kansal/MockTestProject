@@ -36,7 +36,23 @@
       .answers h2 {
         text-align: center;
       }
-      
+      /* Styling for the Submit button */
+      .answers .submit-btn {
+        margin-top: 20px;
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  padding: 8px 16px; /* Adjusted padding for smaller size */
+  font-size: 14px; /* Adjusted font size for smaller text */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.answers .submit-btn:hover {
+  background-color: #16a085;
+}
+
       /* Styling for responsive layout */
       @media screen and (max-width: 768px) {
         .container {
@@ -77,8 +93,12 @@
     <input type="text" id="answer2" name="answer2" placeholder="Answer 2"><br>
     <input type="text" id="answer3" name="answer3" placeholder="Answer 3"><br>
     <!-- Add more input boxes for more questions -->
+    <input type="submit" value="Submit" class="submit-btn" onclick="openResultPage()">
   </div>
 </div>
+<!-- <div class="submit-btn">
+  <button type="submit">Submit</button>
+</div> -->
 <script>
   function updateExamName() {
     const queryString = window.location.search;
@@ -88,6 +108,14 @@
   }
 
   updateExamName();
+  function openResultPage() {
+        window.location.href = 'ResultPage.html';
+    }
 </script>
+<script type = "text/javascript" >  
+  function preventBack() { window.history.forward(); }  
+  setTimeout("preventBack()", 0);  
+  window.onunload = function () { null };  
+</script> 
 </body>
 </html>

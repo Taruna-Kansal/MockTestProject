@@ -50,6 +50,25 @@
     .wrong-answer {
       color: red;
     }
+
+    /* Styling for the button */
+    .home-btn {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      background-color: #1abc9c;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-btn:hover {
+      background-color: #16a085;
+    }
   </style>
 </head>
 <body>
@@ -62,6 +81,7 @@
       <h3>Wrong Answers:</h3>
       <ul id="wrongAnswers" class="result-list"></ul>
     </div>
+    <button class="home-btn" onclick="goToHomePage()">Go to Home Page</button>
   </div>
 
   <script>
@@ -96,6 +116,16 @@
     }
 
     calculateScore();
+
+    function goToHomePage() {
+      window.location.href = 'index.html'; 
+    }
+    // Disable back button functionality
+    // window.history.pushState(null, null, window.location.href);
+    // window.onpopstate = function () {
+    //   window.history.pushState(null, null, window.location.href);
+    // };
   </script>
 </body>
 </html>
+

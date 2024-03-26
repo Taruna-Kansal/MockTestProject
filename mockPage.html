@@ -85,13 +85,46 @@
   <div class="questions">
     <h2>Questions</h2>
     <!-- Your questions go here -->
+  {{ Questions }}
   </div>
   <div class="answers">
     <h2>Answers</h2>
-    <!-- Your text input boxes for answers go here -->
-    <input type="text" id="answer1" name="answer1" placeholder="Answer 1"><br>
-    <input type="text" id="answer2" name="answer2" placeholder="Answer 2"><br>
-    <input type="text" id="answer3" name="answer3" placeholder="Answer 3"><br>
+    <!-- Your text input boxes for answers go here --><!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Textbox Generator</title>
+  </head>
+  <body>
+  
+  <!-- Container to hold the textboxes -->
+  <div id="textbox-container"></div>
+  
+  <script>
+  // Get the container element
+  var container = document.getElementById("textbox-container");
+  
+  // Loop to generate 90 textboxes
+  for (var i = 1; i <= 90; i++) {
+      // Create a new textbox element
+      var textbox = document.createElement("input");
+  
+      // Set attributes for the textbox
+      textbox.type = "text";
+      textbox.id = "textbox" + i;
+      textbox.name = "textbox" + i;
+      textbox.placeholder="Answer" + i;
+  
+      // Append the textbox to the container
+      container.appendChild(textbox);
+      container.appendChild(document.createElement("br")); // Add line break after each textbox
+  }
+  </script>
+  
+  </body>
+  </html>
+  
     <!-- Add more input boxes for more questions -->
     <input type="submit" value="Submit" class="submit-btn" onclick="openResultPage()">
   </div>

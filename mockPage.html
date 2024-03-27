@@ -5,7 +5,7 @@
 <title>Mock Paper</title>
 </head>
 <body>
-    <style>
+<style>
     body {
         font-family: Arial, sans-serif;
         margin: 0;
@@ -39,19 +39,19 @@
       /* Styling for the Submit button */
       .answers .submit-btn {
         margin-top: 20px;
-  background-color: #1abc9c;
-  color: white;
-  border: none;
-  padding: 8px 16px; /* Adjusted padding for smaller size */
-  font-size: 14px; /* Adjusted font size for smaller text */
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+        background-color: #1abc9c;
+        color: white;
+        border: none;
+        padding: 8px 16px; /* Adjusted padding for smaller size */
+        font-size: 14px; /* Adjusted font size for smaller text */
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
 
-.answers .submit-btn:hover {
-  background-color: #16a085;
-}
+      .answers .submit-btn:hover {
+        background-color: #16a085;
+      }
 
       /* Styling for responsive layout */
       @media screen and (max-width: 768px) {
@@ -65,7 +65,7 @@
           margin-bottom: 20px;
         }
       }
-    </style>      
+</style>      
 <div class="header">
   <h1>Mock Paper: <span id="selectedExam"></span></h1>
 </div>
@@ -84,13 +84,14 @@
 <div class="container">
   <div class="questions">
     <h2>Questions</h2>
-    <!-- Your questions go here -->
+    <!-- questions go here -->
   {{ Questions }}
   </div>
   <div class="answers">
     <h2>Answers</h2>
-    <!-- Your text input boxes for answers go here --><!DOCTYPE html>
-<html lang="en">
+    <!-- text input boxes for answers go here-->
+  <!DOCTYPE html> 
+  <html lang="en">
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -129,9 +130,6 @@
     <input type="submit" value="Submit" class="submit-btn" onclick="openResultPage()">
   </div>
 </div>
-<!-- <div class="submit-btn">
-  <button type="submit">Submit</button>
-</div> -->
 <script>
   function updateExamName() {
     const queryString = window.location.search;

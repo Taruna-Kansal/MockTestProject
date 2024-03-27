@@ -1,0 +1,155 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mock Paper</title>
+</head>
+<body>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .header {
+        text-align: center;
+        padding: 20px;
+        background-color: #1abc9c;
+        color: white;
+      }
+      
+      .container {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+      }
+      
+      .questions,
+      .answers {
+        width: 48%;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      
+      .questions h2,
+      .answers h2 {
+        text-align: center;
+      }
+      /* Styling for the Submit button */
+      .answers .submit-btn {
+        margin-top: 20px;
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  padding: 8px 16px; /* Adjusted padding for smaller size */
+  font-size: 14px; /* Adjusted font size for smaller text */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.answers .submit-btn:hover {
+  background-color: #16a085;
+}
+
+      /* Styling for responsive layout */
+      @media screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+      
+        .questions,
+        .answers {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+    </style>      
+<div class="header">
+  <h1>Mock Paper: <span id="selectedExam"></span></h1>
+</div>
+<div class = "Instructions" >
+  <p>Instructions for attempting the mock paper:</p>
+  <ol>
+    <li>Read each question carefully before answering.</li>
+    <li>Attempt all questions.</li>
+    <li>Make sure to answer within the allocated time.</li>
+    <li>Questions are displayed on the left side with given options for each.</li>
+    <li>User has to enter the answer for every question according to the numbering on the right side panel.</li>
+    <li>Check your answers before submitting.</li>
+  </ol>
+</div>
+
+<div class="container">
+  <div class="questions">
+    <h2>Questions</h2>
+    <!-- Your questions go here -->
+    {{ Questions }}
+      
+  </div>
+  <div class="answers">
+    <h2>Answers</h2>
+    <!-- Your text input boxes for answers go here --><!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Textbox Generator</title>
+  </head>
+  <body>
+  
+  <!-- Container to hold the textboxes -->
+  <div id="textbox-container"></div>
+  
+  <script>
+  // Get the container element
+  var container = document.getElementById("textbox-container");
+  
+  // Loop to generate 50 textboxes
+  for (var i = 1; i <= 50; i++) {
+      // Create a new textbox element
+      var textbox = document.createElement("input");
+  
+      // Set attributes for the textbox
+      textbox.type = "text";
+      textbox.id = "textbox" + i;
+      textbox.name = "textbox" + i;
+      textbox.placeholder="Answer" + i;
+  
+      // Append the textbox to the container
+      container.appendChild(textbox);
+      container.appendChild(document.createElement("br")); // Add line break after each textbox
+  }
+  </script>
+  
+  </body>
+  </html>
+  
+    <!-- Add more input boxes for more questions -->
+    <input type="submit" value="Submit" class="submit-btn" onclick="openResultPage()">
+  </div>
+</div>
+<!-- <div class="submit-btn">
+  <button type="submit">Submit</button>
+</div> -->
+<script>
+  function updateExamName() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const selectedExam = urlParams.get('exam');
+    document.getElementById('selectedExam').textContent = selectedExam;
+  }
+
+  updateExamName();
+  function openResultPage() {
+        window.location.href = 'ResultPage.html';
+    }
+</script>
+<script type = "text/javascript" >  
+  function preventBack() { window.history.forward(); }  
+  setTimeout("preventBack()", 0);  
+  window.onunload = function () { null };  
+</script> 
+</body>
+</html>
